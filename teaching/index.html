@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="zh-Hant-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style></head><body>
+<title>十大死因四圖教學</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: sticky tab bar over a single reading column; each figure is one view, routed by #hash. Light-only by design (classroom projection). */
+:root {
+  --paper: #ffffff; --ground: #f3f5fa; --ink: #26304a; --muted: #56627f; --rule: #dde2ec;
+  --blue: #2f6fd6; --blueT: #e9f1fd; --coral: #d13b4a; --coralT: #fdecee; --green: #1c8f69; --greenT: #e5f5ef;
+  --sun: #e9a21b; --sunT: #fff4d9; --purple: #7350cf;
+  --font: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.75; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.top { background: var(--paper); border-bottom: 1px solid var(--rule); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top .wrap { padding-block: 28px 18px; }
+.kicker { font-size: 13px; font-weight: 700; letter-spacing: .12em; color: var(--coral); margin: 0 0 4px; }
+h1 { font-size: clamp(26px, 3.4vw, 38px); font-weight: 900; line-height: 1.25; margin: 0 0 8px; text-wrap: balance; }
+.sub { color: var(--muted); margin: 0; max-width: 64ch; }
+.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--rule); }
+.tabs .wrap { display: flex; gap: 4px; overflow-x: auto; padding-block: 8px; scrollbar-width: thin; }
+.tabs a { flex: none; text-decoration: none; color: var(--muted); font-weight: 700; font-size: 14px; padding: 7px 14px; border-radius: 999px; border: 1.5px solid transparent; }
+.tabs a:hover { color: var(--ink); background: var(--ground); }
+.tabs a[aria-current="page"] { color: #fff; background: var(--ink); }
+.tabs a[data-c="fig1"][aria-current="page"] { background: var(--blue); }
+.tabs a[data-c="fig2"][aria-current="page"] { background: var(--coral); }
+.tabs a[data-c="fig3"][aria-current="page"] { background: var(--green); }
+.tabs a[data-c="fig4"][aria-current="page"] { background: var(--purple); }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+main .wrap { padding-block: 28px 56px; }
+.view { display: flex; flex-direction: column; gap: 14px; }
+.eyebrow { margin: 0; font-size: 13px; font-weight: 700; color: var(--coral); letter-spacing: .08em; }
+h2 { font-size: clamp(22px, 2.6vw, 30px); font-weight: 900; line-height: 1.3; margin: 0; text-wrap: balance; }
+h3 { font-size: 18px; font-weight: 700; margin: 14px 0 0; }
+.lead { font-size: 17px; margin: 0; max-width: 66ch; }
+p { margin: 0; }
+.fig { margin: 6px 0 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 10px; position: relative; }
+.figtools { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+.swipe { font-size: 13px; color: var(--muted); visibility: hidden; }
+@media (max-width: 800px) { .swipe { visibility: visible; } }
+.svgwrap { overflow-x: auto; }
+.svgwrap svg { display: block; width: 100%; height: auto; min-width: 760px; }
+.svgwrap.big svg { min-width: 1280px; }
+.meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
+.m { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 16px; display: flex; flex-direction: column; min-width: 0; }
+.k { font-size: 13px; font-weight: 700; color: var(--muted); }
+.tw { overflow-x: auto; background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; vertical-align: top; padding: 9px 14px; border-bottom: 1px solid var(--rule); }
+thead th { background: var(--ground); font-size: 13px; color: var(--muted); white-space: nowrap; }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+table.kg td:first-child { font-weight: 700; white-space: nowrap; color: var(--blue); }
+.h3row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+.h3row h3 { margin: 0; }
+.btn { font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; border-radius: 999px; padding: 6px 14px; border: 1.5px solid var(--ink); background: var(--ink); color: #fff; }
+.btn.ghost { background: var(--paper); color: var(--ink); border-color: var(--rule); }
+.btn.ghost:hover { border-color: var(--ink); }
+.qa { margin: 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 10px; }
+.qa li { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 16px; }
+.qa .q { font-weight: 700; }
+details { margin-top: 6px; }
+summary { cursor: pointer; color: var(--blue); font-size: 14px; font-weight: 700; width: fit-content; }
+details p { margin-top: 6px; padding: 8px 12px; background: var(--sunT); border-radius: 8px; }
+.act { background: var(--greenT); border-radius: 10px; padding: 12px 16px; max-width: 72ch; }
+.tips { margin: 0; padding-left: 1.2em; color: var(--muted); }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--rule); }
+.pager a { color: var(--ink); font-weight: 700; text-decoration: none; }
+.pager a:hover { text-decoration: underline; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.card { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; text-decoration: none; color: var(--ink); display: flex; flex-direction: column; gap: 4px; border-top: 4px solid var(--c); }
+.card:hover { border-color: var(--c); }
+.card b { font-size: 17px; }
+.card .qq { color: var(--muted); font-size: 14px; }
+.matrix th[scope="row"] { font-weight: 400; min-width: 260px; }
+.matrix .code { display: block; font-weight: 700; color: var(--blue); }
+.matrix .desc { display: block; font-size: 13px; color: var(--muted); line-height: 1.5; }
+.matrix td { text-align: center; vertical-align: middle; }
+.matrix .dot { color: var(--coral); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.step label { display: grid; grid-template-columns: 22px 1fr; column-gap: 12px; background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 16px; cursor: pointer; }
+.step input { grid-row: 1 / span 4; width: 20px; height: 20px; margin-top: 4px; accent-color: var(--green); }
+.step .when { font-size: 13px; font-weight: 700; color: var(--muted); }
+.step .what { font-weight: 700; }
+.step .use, .step .out { font-size: 14px; color: var(--muted); }
+.step input:checked ~ .what { text-decoration: line-through; color: var(--muted); }
+.progress { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.bar { flex: 1; min-width: 160px; height: 10px; background: var(--rule); border-radius: 999px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--green); transition: width .2s; }
+.help { border: 2px solid var(--green); background: var(--greenT); border-radius: 10px; padding: 12px 16px; max-width: 72ch; }
+.help .num { font-weight: 900; font-size: 18px; }
+.note { border-left: 4px solid var(--sun); background: var(--paper); padding: 10px 14px; border-radius: 0 10px 10px 0; max-width: 72ch; }
+ul.plain { margin: 0; padding-left: 1.2em; }
+a.ext { color: var(--blue); }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+
+<header class="top"><div class="wrap">
+  <p class="kicker">健康與護理・教師備課</p>
+  <h1>十大死因四圖教學</h1>
+  <p class="sub">用衛福部 114 年死因統計，讓學生看見「全國」和「自己這個年紀」的死因不一樣，再連結影響健康的四大因素，落實到健康與安全行為。</p>
+</div></header>
+
+<nav class="tabs" aria-label="章節"><div class="wrap">
+  <a href="#guide" data-c="guide">使用說明</a>
+  <a href="#fig1" data-c="fig1">圖1 韋恩圖</a>
+  <a href="#fig2" data-c="fig2">圖2 魚骨圖</a>
+  <a href="#fig3" data-c="fig3">圖3 四象限</a>
+  <a href="#fig4" data-c="fig4">圖4 時間軸</a>
+  <a href="#flow" data-c="flow">課堂流程</a>
+  <a href="#notes" data-c="notes">出處與提醒</a>
+</div></nav>
+
+<main><div class="wrap">
+
+<section class="view" id="guide" data-view="guide">
+  <p class="eyebrow">使用說明</p>
+  <h2>四張圖，從「看見差異」走到「訂出行動」</h2>
+  <p class="lead">建議 2 節課（每節 50 分鐘），也可以只挑 1–2 張圖用 1 節完成。點下方卡片進入每張圖。</p>
+  <div class="cards">
+    <a class="card" href="#fig1" style="--c: var(--blue)"><b>圖1 韋恩圖</b><span class="qq">全國和 12–17 歲的十大死因有哪些重疊？</span><span>引起動機</span></a>
+    <a class="card" href="#fig2" style="--c: var(--coral)"><b>圖2 魚骨圖</b><span class="qq">少年為什麼最常死於事故傷害和自殺？</span><span>分析成因</span></a>
+    <a class="card" href="#fig3" style="--c: var(--green)"><b>圖3 四象限</b><span class="qq">哪些死因現在就能預防？</span><span>判斷可改變的因素</span></a>
+    <a class="card" href="#fig4" style="--c: var(--purple)"><b>圖4 時間軸</b><span class="qq">每個年齡層最大的威脅是什麼？</span><span>訂出行動</span></a>
+  </div>
+  <h3>基本資訊</h3>
+  <div class="tw"><table class=""><thead><tr><th>項目</th><th>內容</th></tr></thead><tbody><tr><td>對象</td><td>高中生</td></tr><tr><td>對應課本</td><td>育達乙版《健康與護理》第一冊 1-4〈我們與慢性病的距離〉、2-1〈「心」動時刻〉；延伸 1-1、1-5</td></tr><tr><td>設備</td><td>投影機；學生分組，每組 1 台手機或平板開互動網站</td></tr><tr><td>數據</td><td>衛生福利部統計處 114 年死因統計（課本使用 2023 年公布的數字）</td></tr><tr><td>課綱依據</td><td>《十二年國民基本教育課程綱要 健康與體育領域》（民國 107 年 5 月）健康與護理學習重點</td></tr></tbody></table></div>
+  <h3>課綱總覽：每張圖涵蓋哪些學習重點</h3>
+  <div class="tw"><table class="matrix"><thead><tr><th>課綱代碼</th><th>圖1</th><th>圖2</th><th>圖3</th><th>圖4</th></tr></thead><tbody><tr><th scope="row"><span class="code">1a-V-2</span><span class="desc">完整地分析個人與群體健康的影響因素</span></th><td><span class="dot" aria-label="有">●</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td></tr><tr><th scope="row"><span class="code">1a-V-3</span><span class="desc">推論內在與外在的行為對健康造成的衝擊與風險</span></th><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td></tr><tr><th scope="row"><span class="code">1b-V-4</span><span class="desc">建構健康自主管理的策略或行動</span></th><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td></tr><tr><th scope="row"><span class="code">2a-V-2</span><span class="desc">省思健康問題對個人、群體…所造成的威脅感與嚴重性</span></th><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td></tr><tr><th scope="row"><span class="code">2a-V-3</span><span class="desc">多層面地體察健康行動在個人及群體的自覺利益與障礙</span></th><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td></tr><tr><th scope="row"><span class="code">2b-V-1</span><span class="desc">樂於終身遵守健康的生活規範與價值觀</span></th><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td></tr><tr><th scope="row"><span class="code">3b-V-1</span><span class="desc">精熟各種自我調適技能</span></th><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td></tr><tr><th scope="row"><span class="code">3b-V-3</span><span class="desc">精熟各種決策與批判技能</span></th><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td></tr><tr><th scope="row"><span class="code">4a-V-3</span><span class="desc">有效地表現促進健康及減少健康風險的行為</span></th><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td></tr><tr><th scope="row"><span class="code">Aa-V-3</span><span class="desc">健康老化，高齡、長期照護與安寧照護</span></th><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td></tr><tr><th scope="row"><span class="code">Ba-V-2</span><span class="desc">事故傷害處理</span></th><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td></tr><tr><th scope="row"><span class="code">Fa-V-2</span><span class="desc">身心失調的預防與處理方法</span></th><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td></tr><tr><th scope="row"><span class="code">Fb-V-1</span><span class="desc">健康生活型態的改善與執行策略</span></th><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="dot" aria-label="有">●</span></td></tr><tr><th scope="row"><span class="code">Fb-V-2</span><span class="desc">全球急、慢性病的防治策略</span></th><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td></tr><tr><th scope="row"><span class="code">健體-U-A1</span><span class="desc">具備…身心健全的發展素養…追求健康與幸福的人生</span></th><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td></tr><tr><th scope="row"><span class="code">健體-U-A2</span><span class="desc">系統思考、分析與探索健康問題</span></th><td><span class="dot" aria-label="有">●</span></td><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td></tr><tr><th scope="row"><span class="code">健體-U-A3</span><span class="desc">具備規劃、實踐與檢討反省的素養</span></th><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="dot" aria-label="有">●</span></td></tr><tr><th scope="row"><span class="code">健體-U-B2</span><span class="desc">適當運用科技、資訊與媒體</span></th><td><span class="dot" aria-label="有">●</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td><td><span class="sr">無</span></td></tr></tbody></table></div>
+</section>
+
+
+<section class="view" id="fig1" data-view="fig1" hidden>
+  <p class="eyebrow">圖1 韋恩圖</p>
+  <h2>全國 vs 12–17 歲：十大死因有哪些重疊？</h2>
+  <p class="lead">114 年兩張榜各 10 個死因，只有 5 個重疊；事故傷害在全國排第 7、自殺第 10，在少年榜卻是第 1、第 2。</p>
+  <figure class="fig">
+    <div class="figtools"><span class="swipe">手機上可左右滑動看完整圖</span><button type="button" class="btn ghost zoom" data-target="svg1" aria-pressed="false">放大圖片</button></div>
+    <div class="svgwrap" id="svg1"><svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="venn-deaths-title venn-deaths-desc">
+<title id="venn-deaths-title">全國 vs 12–17 歲：十大死因有哪些重疊？</title>
+<desc id="venn-deaths-desc">比較 114 年全國與 12 到 17 歲少年十大死因的重疊：兩榜共有事故傷害、自殺、癌症、心臟疾病、肺炎五項。</desc>
+<defs>
+<pattern id="venn-deaths-dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="rgba(38,48,74,0.09)"/></pattern>
+<marker id="venn-deaths-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#26304a"/></marker>
+</defs>
+<rect width="1280" height="720" fill="#ffffff"/>
+<rect width="1280" height="720" fill="url(#venn-deaths-dots)"/>
+<circle cx="500" cy="360" r="260" fill="#2f6fd6" fill-opacity="0.10" stroke="#2f6fd6" stroke-width="2.5"/>
+<circle cx="780" cy="360" r="260" fill="#d13b4a" fill-opacity="0.09" stroke="#d13b4a" stroke-width="2.5"/>
+<text x="260" y="112" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="22" font-weight="900" fill="#2f6fd6" text-anchor="middle" dominant-baseline="middle" >全國 十大死因</text>
+<text x="260" y="138" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="middle" dominant-baseline="middle" >所有年齡</text>
+<text x="1020" y="112" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="22" font-weight="900" fill="#d13b4a" text-anchor="middle" dominant-baseline="middle" >12–17 歲 十大死因</text>
+<text x="1020" y="138" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="middle" dominant-baseline="middle" >少年</text>
+<text x="420" y="196" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="700" fill="#56627f" text-anchor="middle" dominant-baseline="middle" >只在全國榜</text>
+<text x="640" y="196" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="700" fill="#7350cf" text-anchor="middle" dominant-baseline="middle" >兩榜都有</text>
+<text x="862" y="196" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="700" fill="#56627f" text-anchor="middle" dominant-baseline="middle" >只在少年榜</text>
+<text x="420" y="235" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >腦血管疾病</text>
+<text x="420" y="257" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#2f6fd6" text-anchor="middle" dominant-baseline="middle" >全國第 4 名</text>
+<text x="420" y="295" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >糖尿病</text>
+<text x="420" y="317" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#2f6fd6" text-anchor="middle" dominant-baseline="middle" >全國第 5 名</text>
+<text x="420" y="355" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >高血壓性疾病</text>
+<text x="420" y="377" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#2f6fd6" text-anchor="middle" dominant-baseline="middle" >全國第 6 名</text>
+<text x="420" y="415" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >腎臟疾病</text>
+<text x="420" y="437" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#2f6fd6" text-anchor="middle" dominant-baseline="middle" >全國第 8 名</text>
+<text x="420" y="475" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >慢性下呼吸道疾病</text>
+<text x="420" y="497" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#2f6fd6" text-anchor="middle" dominant-baseline="middle" >全國第 9 名</text>
+<text x="862" y="235" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >先天性畸形</text>
+<text x="862" y="257" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#d13b4a" text-anchor="middle" dominant-baseline="middle" >少年第 4 名</text>
+<text x="862" y="295" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >敗血症</text>
+<text x="862" y="317" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#d13b4a" text-anchor="middle" dominant-baseline="middle" >少年第 6 名</text>
+<text x="862" y="355" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >流感</text>
+<text x="862" y="377" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#d13b4a" text-anchor="middle" dominant-baseline="middle" >少年第 7 名</text>
+<text x="862" y="415" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >他殺</text>
+<text x="862" y="437" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#d13b4a" text-anchor="middle" dominant-baseline="middle" >少年第 9 名</text>
+<text x="862" y="475" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >腸道感染症</text>
+<text x="862" y="497" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#d13b4a" text-anchor="middle" dominant-baseline="middle" >少年第 10 名</text>
+<rect x="574.0" y="220" width="132" height="48" rx="8" fill="#fff4d9" stroke="#e9a21b" stroke-width="1.5"/>
+<text x="640" y="235" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="900" fill="#d13b4a" text-anchor="middle" dominant-baseline="middle" >事故傷害</text>
+<text x="640" y="257" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="middle" dominant-baseline="middle" >全國 7 → 少年 1</text>
+<rect x="570.0" y="280" width="140" height="48" rx="8" fill="#fff4d9" stroke="#e9a21b" stroke-width="1.5"/>
+<text x="640" y="295" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="900" fill="#d13b4a" text-anchor="middle" dominant-baseline="middle" >自殺</text>
+<text x="640" y="317" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="middle" dominant-baseline="middle" >全國 10 → 少年 2</text>
+<text x="640" y="355" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >癌症</text>
+<text x="640" y="377" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="middle" dominant-baseline="middle" >全國 1 → 少年 3</text>
+<text x="640" y="415" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >心臟疾病</text>
+<text x="640" y="437" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="middle" dominant-baseline="middle" >全國 2 → 少年 5</text>
+<text x="640" y="475" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >肺炎</text>
+<text x="640" y="497" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="middle" dominant-baseline="middle" >全國 3 → 少年 8</text>
+<line x1="40" y1="652" x2="1240" y2="652" stroke="#dde2ec" stroke-width="1"/>
+<circle cx="52" cy="684" r="7" fill="#2f6fd6" fill-opacity="0.25" stroke="#2f6fd6" stroke-width="2"/><text x="66" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >全國（所有年齡）</text><circle cx="212" cy="684" r="7" fill="#d13b4a" fill-opacity="0.2" stroke="#d13b4a" stroke-width="2"/><text x="226" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >12–17 歲少年</text><rect x="338" y="676" width="16" height="16" rx="4" fill="#fff4d9" stroke="#e9a21b" stroke-width="1.5"/><text x="362" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >名次大翻轉：在全國排後段，在少年卻是前兩名</text><text x="1240" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="400" fill="#7a849c" text-anchor="end" dominant-baseline="middle" >註：少年第 6–10 名的死因每個都不到 5 人，名次容易變動</text>
+</svg></div>
+  </figure>
+  <div class="meta">
+    <div class="m"><span class="k">對應課本</span><span>1-4〈我們與慢性病的距離〉p.51「國人十大死因」圖</span></div>
+    <div class="m"><span class="k">教學目標</span><span>學生能比較兩張排行榜，說出年齡不同、主要健康威脅也不同。</span></div>
+  </div>
+  <h3>圖上的數據（114 年，合計）</h3>
+  <div class="tw"><table class=""><thead><tr><th>區塊</th><th>死因（名次）</th></tr></thead><tbody><tr><td>只在全國榜</td><td>腦血管疾病（4）、糖尿病（5）、高血壓性疾病（6）、腎臟疾病（8）、慢性下呼吸道疾病（9）</td></tr><tr><td>兩榜都有</td><td>事故傷害（全國 7 → 少年 1）、自殺（10 → 2）、癌症（1 → 3）、心臟疾病（2 → 5）、肺炎（3 → 8）</td></tr><tr><td>只在少年榜</td><td>先天性畸形（4）、敗血症（6）、流感（7）、他殺（9）、腸道感染症（10）</td></tr></tbody></table></div>
+  <div class="h3row"><h3>提問引導</h3><button type="button" class="btn ghost revealall" data-scope="fig1">全部顯示答案</button></div>
+  <ol class="qa"><li><p class="q">先猜：12–17 歲最常見的三大死因是什麼？</p><details id="fig1-a1"><summary>看參考答案</summary><p>事故傷害、自殺、癌症。多數學生會猜錯，正好引起動機。</p></details></li><li><p class="q">只在全國榜的 5 個死因有什麼共同點？</p><details id="fig1-a2"><summary>看參考答案</summary><p>都是慢性病，多半在中老年發生。</p></details></li><li><p class="q">為什麼事故傷害和自殺在少年榜排得這麼前面？</p><details id="fig1-a3"><summary>看參考答案</summary><p>少年很少得慢性病，所以外因相對突出；可以接到圖2 分析原因。</p></details></li><li><p class="q">只在少年榜的死因，哪些和生活習慣關係較小？</p><details id="fig1-a4"><summary>看參考答案</summary><p>先天性畸形、敗血症、流感等。</p></details></li></ol>
+  <h3>學生活動</h3>
+  <p class="act">「猜猜看」：各組先寫下少年前三名，再開互動網站「兩張排行榜」核對，切換男、女看差異。</p>
+  <h3>課綱對應</h3>
+  <div class="tw"><table class="kg"><thead><tr><th>代碼</th><th>內容</th><th>如何呼應</th></tr></thead><tbody><tr><td>1a-V-2</td><td>完整地分析個人與群體健康的影響因素</td><td>比較全國與少年群體的死因差異</td></tr><tr><td>2a-V-2</td><td>省思健康問題對個人、群體…所造成的威脅感與嚴重性</td><td>從名次變化體察事故傷害與自殺對同齡者的威脅</td></tr><tr><td>Fb-V-2</td><td>全球急、慢性病的防治策略</td><td>辨識全國榜以慢性病為主</td></tr><tr><td>健體-U-A2</td><td>系統思考、分析與探索健康問題</td><td>用兩組數據對照推論原因</td></tr><tr><td>健體-U-B2</td><td>適當運用科技、資訊與媒體</td><td>用互動網站查詢官方統計</td></tr></tbody></table></div>
+  <h3>教學提醒</h3>
+  <ul class="tips"><li>少年榜第 6–10 名每個死因都不到 5 人，名次容易變動，不要過度解讀。</li></ul>
+  <nav class="pager"><a href='#guide'>← 使用說明</a><a href='#fig2'>圖2 →</a></nav>
+</section>
+<section class="view" id="fig2" data-view="fig2" hidden>
+  <p class="eyebrow">圖2 魚骨圖</p>
+  <h2>為什麼少年最常死於事故傷害和自殺？</h2>
+  <p class="lead">魚頭是 12–17 歲前兩大死因（114 年：事故傷害 68 人、自殺 58 人），四根大骨就是影響健康的四大因素。</p>
+  <figure class="fig">
+    <div class="figtools"><span class="swipe">手機上可左右滑動看完整圖</span><button type="button" class="btn ghost zoom" data-target="svg2" aria-pressed="false">放大圖片</button></div>
+    <div class="svgwrap" id="svg2"><svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fishbone-teen-title fishbone-teen-desc">
+<title id="fishbone-teen-title">為什麼少年最常死於事故傷害和自殺？</title>
+<desc id="fishbone-teen-desc">魚骨圖：以影響健康的四大因素整理 12 到 17 歲前兩大死因（事故傷害、自殺）的可能成因。</desc>
+<defs>
+<pattern id="fishbone-teen-dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="rgba(38,48,74,0.09)"/></pattern>
+<marker id="fishbone-teen-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#26304a"/></marker>
+</defs>
+<rect width="1280" height="720" fill="#ffffff"/>
+<rect width="1280" height="720" fill="url(#fishbone-teen-dots)"/>
+<line x1="280" y1="372" x2="1054" y2="372" stroke="#26304a" stroke-width="3" marker-end="url(#fishbone-teen-arrow)"/>
+<line x1="960" y1="372" x2="844" y2="172" stroke="#2f6fd6" stroke-width="3" stroke-linecap="round"/>
+<line x1="931.0" y1="322.0" x2="903.0" y2="322.0" stroke="#2f6fd6" stroke-width="2" stroke-linecap="round"/>
+<circle cx="931.0" cy="322.0" r="3.5" fill="#2f6fd6"/>
+<text x="895.0" y="322.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="end" dominant-baseline="middle" >睡眠不足、疲勞騎車</text>
+<line x1="902.0" y1="272.0" x2="874.0" y2="272.0" stroke="#2f6fd6" stroke-width="2" stroke-linecap="round"/>
+<circle cx="902.0" cy="272.0" r="3.5" fill="#2f6fd6"/>
+<text x="866.0" y="272.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="end" dominant-baseline="middle" >未戴安全帽、無照駕駛</text>
+<line x1="873.0" y1="222.0" x2="845.0" y2="222.0" stroke="#2f6fd6" stroke-width="2" stroke-linecap="round"/>
+<circle cx="873.0" cy="222.0" r="3.5" fill="#2f6fd6"/>
+<text x="837.0" y="222.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="end" dominant-baseline="middle" >飲酒或使用成癮物質</text>
+<line x1="740" y1="372" x2="624" y2="572" stroke="#7350cf" stroke-width="3" stroke-linecap="round"/>
+<line x1="701.7" y1="438.0" x2="673.7" y2="438.0" stroke="#7350cf" stroke-width="2" stroke-linecap="round"/>
+<circle cx="701.7" cy="438.0" r="3.5" fill="#7350cf"/>
+<text x="665.7" y="438.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="end" dominant-baseline="middle" >家族有憂鬱症等精神疾病</text>
+<line x1="663.4" y1="504.0" x2="635.4" y2="504.0" stroke="#7350cf" stroke-width="2" stroke-linecap="round"/>
+<circle cx="663.4" cy="504.0" r="3.5" fill="#7350cf"/>
+<text x="627.4" y="504.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="end" dominant-baseline="middle" >情緒調節較弱、較衝動</text>
+<line x1="520" y1="372" x2="404" y2="172" stroke="#1c8f69" stroke-width="3" stroke-linecap="round"/>
+<line x1="491.0" y1="322.0" x2="463.0" y2="322.0" stroke="#1c8f69" stroke-width="2" stroke-linecap="round"/>
+<circle cx="491.0" cy="322.0" r="3.5" fill="#1c8f69"/>
+<text x="455.0" y="322.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="end" dominant-baseline="middle" >身心問題沒被及早發現</text>
+<line x1="462.0" y1="272.0" x2="434.0" y2="272.0" stroke="#1c8f69" stroke-width="2" stroke-linecap="round"/>
+<circle cx="462.0" cy="272.0" r="3.5" fill="#1c8f69"/>
+<text x="426.0" y="272.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="end" dominant-baseline="middle" >不知道或不敢找輔導</text>
+<line x1="433.0" y1="222.0" x2="405.0" y2="222.0" stroke="#1c8f69" stroke-width="2" stroke-linecap="round"/>
+<circle cx="433.0" cy="222.0" r="3.5" fill="#1c8f69"/>
+<text x="397.0" y="222.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="end" dominant-baseline="middle" >緊急救護到院時間</text>
+<line x1="300" y1="372" x2="184" y2="572" stroke="#e9a21b" stroke-width="3" stroke-linecap="round"/>
+<line x1="271.0" y1="422.0" x2="243.0" y2="422.0" stroke="#e9a21b" stroke-width="2" stroke-linecap="round"/>
+<circle cx="271.0" cy="422.0" r="3.5" fill="#e9a21b"/>
+<text x="235.0" y="422.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="end" dominant-baseline="middle" >交通環境與道路設計</text>
+<line x1="242.0" y1="472.0" x2="214.0" y2="472.0" stroke="#e9a21b" stroke-width="2" stroke-linecap="round"/>
+<circle cx="242.0" cy="472.0" r="3.5" fill="#e9a21b"/>
+<text x="206.0" y="472.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="end" dominant-baseline="middle" >課業、家庭、人際壓力</text>
+<line x1="213.0" y1="522.0" x2="185.0" y2="522.0" stroke="#e9a21b" stroke-width="2" stroke-linecap="round"/>
+<circle cx="213.0" cy="522.0" r="3.5" fill="#e9a21b"/>
+<text x="177.0" y="522.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="end" dominant-baseline="middle" >霸凌與網路霸凌</text>
+<rect x="792.0" y="132" width="104" height="40" rx="8" fill="#e9f1fd" stroke="#2f6fd6" stroke-width="2"/>
+<text x="844" y="152" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="18" font-weight="900" fill="#2f6fd6" text-anchor="middle" dominant-baseline="middle" >生活習慣</text>
+<rect x="544.0" y="572" width="160" height="40" rx="8" fill="#efeafb" stroke="#7350cf" stroke-width="2"/>
+<text x="624" y="592" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="18" font-weight="900" fill="#7350cf" text-anchor="middle" dominant-baseline="middle" >遺傳與個人體質</text>
+<rect x="352.0" y="132" width="104" height="40" rx="8" fill="#e5f5ef" stroke="#1c8f69" stroke-width="2"/>
+<text x="404" y="152" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="18" font-weight="900" fill="#1c8f69" text-anchor="middle" dominant-baseline="middle" >健康服務</text>
+<rect x="150.0" y="572" width="68" height="40" rx="8" fill="#fff4d9" stroke="#e9a21b" stroke-width="2"/>
+<text x="184" y="592" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="18" font-weight="900" fill="#e9a21b" text-anchor="middle" dominant-baseline="middle" >環境</text>
+<rect x="1060" y="306.0" width="184" height="132" rx="10" fill="#fdecee" stroke="#d13b4a" stroke-width="2.5"/>
+<text x="1152.0" y="336" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="700" fill="#56627f" text-anchor="middle" dominant-baseline="middle" >12–17 歲</text>
+<text x="1152.0" y="364" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="22" font-weight="900" fill="#d13b4a" text-anchor="middle" dominant-baseline="middle" >前兩大死因</text>
+<text x="1152.0" y="396" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >事故傷害</text>
+<text x="1152.0" y="420" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="17" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >自殺</text>
+<line x1="40" y1="652" x2="1240" y2="652" stroke="#dde2ec" stroke-width="1"/>
+<text x="40" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >四根大骨＝影響健康的四大因素；每根小刺是一個可能的原因（教學整理，供討論用）</text><rect x="884" y="668" width="356" height="32" rx="8" fill="#e5f5ef" stroke="#1c8f69" stroke-width="1.5"/><text x="1062" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="700" fill="#1c8f69" text-anchor="middle" dominant-baseline="middle" >需要幫忙：安心專線 1925（24 小時）・學校輔導室</text>
+</svg></div>
+  </figure>
+  <div class="meta">
+    <div class="m"><span class="k">對應課本</span><span>2-1〈「心」動時刻〉p.85–87（事故傷害的定義、骨牌理論、事故傷害的預防模式）</span></div>
+    <div class="m"><span class="k">教學目標</span><span>學生能用四大因素分析少年主要死因，並區分自己可以改變與需要他人協助的部分。</span></div>
+  </div>
+  <h3>圖上的內容（教學整理，非統計）</h3>
+  <div class="tw"><table class=""><thead><tr><th>大骨</th><th>小刺</th></tr></thead><tbody><tr><td>生活習慣</td><td>睡眠不足、疲勞騎車；未戴安全帽、無照駕駛；飲酒或使用成癮物質</td></tr><tr><td>遺傳與個人體質</td><td>家族有憂鬱症等精神疾病；情緒調節較弱、較衝動</td></tr><tr><td>健康服務</td><td>身心問題沒被及早發現；不知道或不敢找輔導；緊急救護到院時間</td></tr><tr><td>環境</td><td>交通環境與道路設計；課業、家庭、人際壓力；霸凌與網路霸凌</td></tr></tbody></table></div>
+  <div class="h3row"><h3>提問引導</h3><button type="button" class="btn ghost revealall" data-scope="fig2">全部顯示答案</button></div>
+  <ol class="qa"><li><p class="q">哪一根大骨是你自己最能改變的？</p><details id="fig2-a1"><summary>看參考答案</summary><p>生活習慣，例如騎車戴好安全帽、不疲勞騎車。</p></details></li><li><p class="q">哪些需要學校、家庭或政府一起改變？</p><details id="fig2-a2"><summary>看參考答案</summary><p>健康服務與環境，例如輔導資源、道路設計、反霸凌。</p></details></li><li><p class="q">用課本的骨牌理論來看，你可以抽掉哪一張骨牌？</p><details id="fig2-a3"><summary>看參考答案</summary><p>由學生依課本 p.86 作答。</p></details></li><li><p class="q">你還能再加上哪些小刺？</p><details id="fig2-a4"><summary>看參考答案</summary><p>開放作答。</p></details></li></ol>
+  <h3>學生活動</h3>
+  <p class="act">發下空白魚骨圖，各組選「事故傷害」或「自殺」其中一個做魚頭，先自己填小刺，再與圖2 對照補充。</p>
+  <h3>課綱對應</h3>
+  <div class="tw"><table class="kg"><thead><tr><th>代碼</th><th>內容</th><th>如何呼應</th></tr></thead><tbody><tr><td>1a-V-2</td><td>完整地分析個人與群體健康的影響因素</td><td>依四大因素拆解成因</td></tr><tr><td>1a-V-3</td><td>推論內在與外在的行為對健康造成的衝擊與風險</td><td>辨識疲勞騎車、無照駕駛等風險行為</td></tr><tr><td>3b-V-1</td><td>精熟各種自我調適技能</td><td>連結壓力與情緒調適、求助</td></tr><tr><td>Ba-V-2</td><td>事故傷害處理</td><td>搭配 2-1 事故傷害的預防模式</td></tr><tr><td>Fa-V-2</td><td>身心失調的預防與處理方法</td><td>討論身心問題的及早發現與求助</td></tr><tr><td>健體-U-A2</td><td>系統思考、分析與探索…解決人生中各種…健康的問題</td><td>用魚骨圖做根本原因分析</td></tr></tbody></table></div>
+  <h3>教學提醒</h3>
+  <ul class="tips"><li>討論自殺時只談原因與支持，不討論方式細節。</li><li>事前與輔導室追蹤有風險的學生；圖上有安心專線 1925，請在課堂上念出來。</li><li>小刺是教學整理的可能原因，不是統計結果。</li></ul>
+  <nav class="pager"><a href='#fig1'>← 圖1</a><a href='#fig3'>圖3 →</a></nav>
+</section>
+<section class="view" id="fig3" data-view="fig3" hidden>
+  <p class="eyebrow">圖3 四象限</p>
+  <h2>哪些死因，現在就能開始預防？</h2>
+  <p class="lead">事故傷害與自殺落在「年輕、容易預防」，大部分慢性病落在「年長、容易預防」：發病在老年，習慣卻在年輕時養成。</p>
+  <figure class="fig">
+    <div class="figtools"><span class="swipe">手機上可左右滑動看完整圖</span><button type="button" class="btn ghost zoom" data-target="svg3" aria-pressed="false">放大圖片</button></div>
+    <div class="svgwrap" id="svg3"><svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="quad-title quad-desc">
+<title id="quad-title">哪些死因，現在就能開始預防？</title>
+<desc id="quad-desc">四象限圖：常見死因依好發年齡（年輕到年長）與可預防程度（較難到容易）分布，事故傷害與自殺位於年輕且容易預防的區域。</desc>
+<defs>
+<pattern id="quad-dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="rgba(38,48,74,0.09)"/></pattern>
+<marker id="quad-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#26304a"/></marker>
+</defs>
+<rect width="1280" height="720" fill="#ffffff"/>
+<rect width="1280" height="720" fill="url(#quad-dots)"/>
+<rect x="180" y="90" width="460" height="258" rx="10" fill="#fdecee" fill-opacity="0.7"/>
+<line x1="160" y1="348" x2="1120" y2="348" stroke="#26304a" stroke-width="2" marker-end="url(#quad-arrow)"/>
+<line x1="640" y1="614" x2="640" y2="80" stroke="#26304a" stroke-width="2" marker-end="url(#quad-arrow)"/>
+<text x="1132" y="348" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >年長</text>
+<text x="148" y="348" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="end" dominant-baseline="middle" >年輕</text>
+<text x="640" y="64" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >容易預防</text>
+<text x="640" y="630" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="middle" dominant-baseline="middle" >較難預防</text>
+<text x="196" y="108" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="900" fill="#d13b4a" text-anchor="start" dominant-baseline="middle" >現在就能做的事</text>
+<text x="1084" y="108" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="900" fill="#2f6fd6" text-anchor="end" dominant-baseline="middle" >年輕養成習慣，老了受益</text>
+<text x="196" y="588" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="900" fill="#7350cf" text-anchor="start" dominant-baseline="middle" >先天因素為主</text>
+<text x="1084" y="588" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="900" fill="#1c8f69" text-anchor="end" dominant-baseline="middle" >靠疫苗、篩檢與醫療照護</text>
+<circle cx="306" cy="176" r="16" fill="#d13b4a" fill-opacity="0.15"/>
+<circle cx="306" cy="176" r="9" fill="#d13b4a" stroke="#fff" stroke-width="2"/>
+<text x="322" y="176" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="18" font-weight="900" fill="#d13b4a" text-anchor="start" dominant-baseline="middle" >事故傷害</text>
+<circle cx="464" cy="252" r="16" fill="#d13b4a" fill-opacity="0.15"/>
+<circle cx="464" cy="252" r="9" fill="#d13b4a" stroke="#fff" stroke-width="2"/>
+<text x="480" y="252" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="18" font-weight="900" fill="#d13b4a" text-anchor="start" dominant-baseline="middle" >自殺</text>
+<circle cx="288" cy="480" r="7" fill="#7350cf" stroke="#fff" stroke-width="2"/>
+<text x="304" y="480" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >先天性畸形</text>
+<circle cx="746" cy="176" r="7" fill="#2f6fd6" stroke="#fff" stroke-width="2"/>
+<text x="762" y="176" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >糖尿病</text>
+<circle cx="922" cy="157" r="7" fill="#2f6fd6" stroke="#fff" stroke-width="2"/>
+<text x="938" y="157" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >高血壓</text>
+<circle cx="816" cy="233" r="7" fill="#2f6fd6" stroke="#fff" stroke-width="2"/>
+<text x="832" y="233" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >心臟疾病</text>
+<circle cx="939" cy="262" r="7" fill="#2f6fd6" stroke="#fff" stroke-width="2"/>
+<text x="955" y="262" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >腦血管疾病</text>
+<circle cx="781" cy="300" r="7" fill="#2f6fd6" stroke="#fff" stroke-width="2"/>
+<text x="797" y="300" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >癌症</text>
+<circle cx="1036" cy="290" r="7" fill="#2f6fd6" stroke="#fff" stroke-width="2"/>
+<text x="1020" y="290" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="end" dominant-baseline="middle" >慢性下呼吸道疾病</text>
+<circle cx="886" cy="333" r="7" fill="#2f6fd6" stroke="#fff" stroke-width="2"/>
+<text x="902" y="333" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >腎臟疾病</text>
+<circle cx="1010" cy="413" r="7" fill="#1c8f69" stroke="#fff" stroke-width="2"/>
+<text x="994" y="413" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="end" dominant-baseline="middle" >肺炎</text>
+<line x1="40" y1="652" x2="1240" y2="652" stroke="#dde2ec" stroke-width="1"/>
+<circle cx="52" cy="684" r="7" fill="#2f6fd6"/><text x="66" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >慢性病</text><circle cx="142" cy="684" r="7" fill="#d13b4a"/><text x="156" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >事故與暴力</text><circle cx="260" cy="684" r="7" fill="#1c8f69"/><text x="274" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >感染</text><circle cx="334" cy="684" r="7" fill="#7350cf"/><text x="348" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >先天</text><text x="1240" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="400" fill="#7a849c" text-anchor="end" dominant-baseline="middle" >位置為教學示意：橫軸依主要死亡年齡（114 年統計），縱軸依可改變的危險因子多寡</text>
+</svg></div>
+  </figure>
+  <div class="meta">
+    <div class="m"><span class="k">對應課本</span><span>1-4〈我們與慢性病的距離〉（生活習慣病、什麼樣的人容易得慢性病）；2-1 事故傷害</span></div>
+    <div class="m"><span class="k">教學目標</span><span>學生能依「好發年齡」與「可預防程度」判斷死因的位置，並說明現在的健康行為如何影響未來。</span></div>
+  </div>
+  <h3>四個象限（位置為教學示意，不是精確數值）</h3>
+  <div class="tw"><table class=""><thead><tr><th>象限</th><th>圖上的死因</th><th>意義</th></tr></thead><tbody><tr><td>年輕・容易預防</td><td>事故傷害、自殺</td><td>現在就能做的事</td></tr><tr><td>年長・容易預防</td><td>糖尿病、高血壓、心臟疾病、腦血管疾病、癌症、慢性下呼吸道疾病、腎臟疾病</td><td>年輕養成習慣，老了受益</td></tr><tr><td>年輕・較難預防</td><td>先天性畸形</td><td>先天因素為主</td></tr><tr><td>年長・較難預防</td><td>肺炎</td><td>靠疫苗、篩檢與醫療照護</td></tr></tbody></table></div>
+  <div class="h3row"><h3>提問引導</h3><button type="button" class="btn ghost revealall" data-scope="fig3">全部顯示答案</button></div>
+  <ol class="qa"><li><p class="q">為什麼「年長・容易預防」這一格最擠？</p><details id="fig3-a1"><summary>看參考答案</summary><p>慢性病多半和飲食、運動、菸酒檳榔有關；對應課本 1-4。</p></details></li><li><p class="q">你認為哪個死因放錯位置？為什麼？</p><details id="fig3-a2"><summary>看參考答案</summary><p>開放作答，重點在說出理由。</p></details></li><li><p class="q">對你來說，最重要的是哪一格？</p><details id="fig3-a3"><summary>看參考答案</summary><p>左上：騎車安全、情緒求助；右上：從現在養成的習慣。</p></details></li></ol>
+  <h3>學生活動</h3>
+  <p class="act">發下死因小卡，各組先自己放進四象限，再與圖3 比較，說明放得不同的理由。</p>
+  <h3>課綱對應</h3>
+  <div class="tw"><table class="kg"><thead><tr><th>代碼</th><th>內容</th><th>如何呼應</th></tr></thead><tbody><tr><td>1a-V-3</td><td>推論內在與外在的行為對健康造成的衝擊與風險</td><td>判斷哪些死因受行為影響</td></tr><tr><td>2a-V-3</td><td>多層面地體察健康行動在個人及群體的自覺利益與障礙</td><td>討論現在行動對未來的利益</td></tr><tr><td>3b-V-3</td><td>精熟各種決策與批判技能</td><td>對圖上的位置提出異議與理由</td></tr><tr><td>Fb-V-1</td><td>健康生活型態的改善與執行策略</td><td>連結「年長・容易預防」的生活型態</td></tr><tr><td>Fb-V-2</td><td>全球急、慢性病的防治策略</td><td>區分慢性病與感染疾病的預防方式</td></tr><tr><td>健體-U-A1</td><td>具備…身心健全的發展素養…追求健康與幸福的人生</td><td>從現在規劃未來的健康</td></tr></tbody></table></div>
+  <h3>教學提醒</h3>
+  <ul class="tips"><li>橫軸依主要死亡年齡（114 年統計），縱軸依可改變的危險因子多寡，是教學判斷。</li></ul>
+  <nav class="pager"><a href='#fig2'>← 圖2</a><a href='#fig4'>圖4 →</a></nav>
+</section>
+<section class="view" id="fig4" data-view="fig4" hidden>
+  <p class="eyebrow">圖4 時間軸</p>
+  <h2>從現在到老年：每個年齡層最大的威脅是什麼？</h2>
+  <p class="lead">15–24 歲的前兩名是事故傷害與自殺；45 歲以後前三名換成癌症、心臟疾病等慢性病。</p>
+  <figure class="fig">
+    <div class="figtools"><span class="swipe">手機上可左右滑動看完整圖</span><button type="button" class="btn ghost zoom" data-target="svg4" aria-pressed="false">放大圖片</button></div>
+    <div class="svgwrap" id="svg4"><svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="timeline-life-title timeline-life-desc">
+<title id="timeline-life-title">從現在到老年：每個年齡層最大的威脅是什麼？</title>
+<desc id="timeline-life-desc">時間軸：114 年各年齡層（1 到 14、15 到 24、25 到 44、45 到 64、65 歲以上）的前三大死因及死亡人數，並列出各階段的健康行為。</desc>
+<defs>
+<pattern id="timeline-life-dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="rgba(38,48,74,0.09)"/></pattern>
+<marker id="timeline-life-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0, 10 4, 0 8" fill="#26304a"/></marker>
+</defs>
+<rect width="1280" height="720" fill="#ffffff"/>
+<rect width="1280" height="720" fill="url(#timeline-life-dots)"/>
+<line x1="210.0" y1="300" x2="210.0" y2="348" stroke="#7350cf" stroke-width="2"/>
+<line x1="210.0" y1="420" x2="210.0" y2="372" stroke="#7350cf" stroke-width="2"/>
+<path d="M430.0,300 L430.0,316 Q430.0,324 422.0,324 L359.1,324 Q351.1,324 351.1,332 L351.1,348" fill="none" stroke="#d13b4a" stroke-width="2"/>
+<path d="M430.0,420 L430.0,404 Q430.0,396 422.0,396 L359.1,396 Q351.1,396 351.1,388 L351.1,372" fill="none" stroke="#d13b4a" stroke-width="2"/>
+<path d="M650.0,300 L650.0,316 Q650.0,324 642.0,324 L532.4,324 Q524.4,324 524.4,332 L524.4,348" fill="none" stroke="#e9a21b" stroke-width="2"/>
+<path d="M650.0,420 L650.0,404 Q650.0,396 642.0,396 L532.4,396 Q524.4,396 524.4,388 L524.4,372" fill="none" stroke="#e9a21b" stroke-width="2"/>
+<path d="M870.0,300 L870.0,316 Q870.0,324 862.0,324 L763.6,324 Q755.6,324 755.6,332 L755.6,348" fill="none" stroke="#2f6fd6" stroke-width="2"/>
+<path d="M870.0,420 L870.0,404 Q870.0,396 862.0,396 L763.6,396 Q755.6,396 755.6,388 L755.6,372" fill="none" stroke="#2f6fd6" stroke-width="2"/>
+<path d="M1090.0,300 L1090.0,316 Q1090.0,324 1082.0,324 L1017.8,324 Q1009.8,324 1009.8,332 L1009.8,348" fill="none" stroke="#1c8f69" stroke-width="2"/>
+<path d="M1090.0,420 L1090.0,404 Q1090.0,396 1082.0,396 L1017.8,396 Q1009.8,396 1009.8,388 L1009.8,372" fill="none" stroke="#1c8f69" stroke-width="2"/>
+<rect x="131.6" y="348" width="161.8" height="24" fill="#7350cf" fill-opacity="0.55"/>
+<rect x="293.3" y="348" width="115.6" height="24" fill="#d13b4a" fill-opacity="0.95"/>
+<rect x="408.9" y="348" width="231.1" height="24" fill="#e9a21b" fill-opacity="0.55"/>
+<rect x="640.0" y="348" width="231.1" height="24" fill="#2f6fd6" fill-opacity="0.55"/>
+<rect x="871.1" y="348" width="288.9" height="24" fill="#1c8f69" fill-opacity="0.55"/>
+<rect x="120" y="348" width="11.6" height="24" fill="#dde2ec"/>
+<line x1="120.0" y1="348" x2="120.0" y2="372" stroke="#fff" stroke-width="2"/>
+<line x1="293.3" y1="348" x2="293.3" y2="372" stroke="#fff" stroke-width="2"/>
+<line x1="408.9" y1="348" x2="408.9" y2="372" stroke="#fff" stroke-width="2"/>
+<line x1="640.0" y1="348" x2="640.0" y2="372" stroke="#fff" stroke-width="2"/>
+<line x1="871.1" y1="348" x2="871.1" y2="372" stroke="#fff" stroke-width="2"/>
+<line x1="1160.0" y1="348" x2="1160.0" y2="372" stroke="#fff" stroke-width="2"/>
+<text x="297" y="361.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="start" dominant-baseline="middle" >15</text>
+<text x="413" y="361.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="start" dominant-baseline="middle" >25</text>
+<text x="644" y="361.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="start" dominant-baseline="middle" >45</text>
+<text x="875" y="361.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="start" dominant-baseline="middle" >65</text>
+<text x="1168" y="360.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="700" fill="#56627f" text-anchor="start" dominant-baseline="middle" >歲</text>
+<text x="112" y="360.0" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="700" fill="#56627f" text-anchor="end" dominant-baseline="middle" >0</text>
+<rect x="108" y="96" width="204" height="204" rx="10" fill="#ffffff" stroke="#7350cf" stroke-width="1.5"/>
+<rect x="108" y="96" width="204" height="44" rx="10" fill="#efeafb"/>
+<rect x="108" y="130" width="204" height="10" fill="#efeafb"/>
+<rect x="108" y="96" width="204" height="204" rx="10" fill="none" stroke="#7350cf" stroke-width="1.5"/>
+<text x="124" y="118" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="18" font-weight="900" fill="#7350cf" text-anchor="start" dominant-baseline="middle" >1–14 歲</text>
+<text x="124" y="158" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >前三大死因（人）</text>
+<circle cx="134" cy="192" r="11" fill="#7350cf"/>
+<text x="134" y="193" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >1</text>
+<text x="152" y="192" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >癌症</text>
+<text x="298" y="192" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >63</text>
+<circle cx="134" cy="226" r="11" fill="#7350cf"/>
+<text x="134" y="227" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >2</text>
+<text x="152" y="226" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >事故傷害</text>
+<text x="298" y="226" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >51</text>
+<circle cx="134" cy="260" r="11" fill="#7350cf"/>
+<text x="134" y="261" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >3</text>
+<text x="152" y="260" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >先天性畸形</text>
+<text x="298" y="260" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >27</text>
+<rect x="108" y="420" width="204" height="204" rx="10" fill="#efeafb" stroke="#7350cf" stroke-width="1.5"/>
+<text x="124" y="446" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="700" fill="#7350cf" text-anchor="start" dominant-baseline="middle" >可以做的健康行為</text>
+<path d="M126,486 l5,5 l9,-10" fill="none" stroke="#7350cf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="148" y="486" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >按時接種疫苗</text>
+<path d="M126,526 l5,5 l9,-10" fill="none" stroke="#7350cf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="148" y="526" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >乘車繫安全帶</text>
+<path d="M126,566 l5,5 l9,-10" fill="none" stroke="#7350cf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="148" y="566" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >均衡飲食、多活動</text>
+<rect x="328" y="96" width="204" height="204" rx="10" fill="#ffffff" stroke="#d13b4a" stroke-width="3"/>
+<rect x="328" y="96" width="204" height="44" rx="10" fill="#fdecee"/>
+<rect x="328" y="130" width="204" height="10" fill="#fdecee"/>
+<rect x="328" y="96" width="204" height="204" rx="10" fill="none" stroke="#d13b4a" stroke-width="3"/>
+<text x="344" y="118" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="18" font-weight="900" fill="#d13b4a" text-anchor="start" dominant-baseline="middle" >15–24 歲</text>
+<rect x="456" y="106" width="64" height="24" rx="12" fill="#d13b4a"/>
+<text x="488" y="118" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >你在這裡</text>
+<text x="344" y="158" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >前三大死因（人）</text>
+<circle cx="354" cy="192" r="11" fill="#d13b4a"/>
+<text x="354" y="193" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >1</text>
+<text x="372" y="192" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >事故傷害</text>
+<text x="518" y="192" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >329</text>
+<circle cx="354" cy="226" r="11" fill="#d13b4a"/>
+<text x="354" y="227" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >2</text>
+<text x="372" y="226" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >自殺</text>
+<text x="518" y="226" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >236</text>
+<circle cx="354" cy="260" r="11" fill="#d13b4a"/>
+<text x="354" y="261" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >3</text>
+<text x="372" y="260" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >癌症</text>
+<text x="518" y="260" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >74</text>
+<rect x="328" y="420" width="204" height="204" rx="10" fill="#fdecee" stroke="#d13b4a" stroke-width="3"/>
+<text x="344" y="446" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="700" fill="#d13b4a" text-anchor="start" dominant-baseline="middle" >可以做的健康行為</text>
+<path d="M346,486 l5,5 l9,-10" fill="none" stroke="#d13b4a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="368" y="486" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >騎車戴好安全帽</text>
+<path d="M346,526 l5,5 l9,-10" fill="none" stroke="#d13b4a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="368" y="526" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >心情不好要說出來</text>
+<path d="M346,566 l5,5 l9,-10" fill="none" stroke="#d13b4a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="368" y="566" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >拒絕菸、酒、檳榔</text>
+<rect x="548" y="96" width="204" height="204" rx="10" fill="#ffffff" stroke="#e9a21b" stroke-width="1.5"/>
+<rect x="548" y="96" width="204" height="44" rx="10" fill="#fff4d9"/>
+<rect x="548" y="130" width="204" height="10" fill="#fff4d9"/>
+<rect x="548" y="96" width="204" height="204" rx="10" fill="none" stroke="#e9a21b" stroke-width="1.5"/>
+<text x="564" y="118" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="18" font-weight="900" fill="#e9a21b" text-anchor="start" dominant-baseline="middle" >25–44 歲</text>
+<text x="564" y="158" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >前三大死因（人）</text>
+<circle cx="574" cy="192" r="11" fill="#e9a21b"/>
+<text x="574" y="193" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >1</text>
+<text x="592" y="192" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >癌症</text>
+<text x="738" y="192" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >1,362</text>
+<circle cx="574" cy="226" r="11" fill="#e9a21b"/>
+<text x="574" y="227" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >2</text>
+<text x="592" y="226" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >自殺</text>
+<text x="738" y="226" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >1,177</text>
+<circle cx="574" cy="260" r="11" fill="#e9a21b"/>
+<text x="574" y="261" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >3</text>
+<text x="592" y="260" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >事故傷害</text>
+<text x="738" y="260" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >882</text>
+<rect x="548" y="420" width="204" height="204" rx="10" fill="#fff4d9" stroke="#e9a21b" stroke-width="1.5"/>
+<text x="564" y="446" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="700" fill="#e9a21b" text-anchor="start" dominant-baseline="middle" >可以做的健康行為</text>
+<path d="M566,486 l5,5 l9,-10" fill="none" stroke="#e9a21b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="588" y="486" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >規律運動、控制體重</text>
+<path d="M566,526 l5,5 l9,-10" fill="none" stroke="#e9a21b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="588" y="526" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >學會壓力管理</text>
+<path d="M566,566 l5,5 l9,-10" fill="none" stroke="#e9a21b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="588" y="566" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >定期健康檢查</text>
+<rect x="768" y="96" width="204" height="204" rx="10" fill="#ffffff" stroke="#2f6fd6" stroke-width="1.5"/>
+<rect x="768" y="96" width="204" height="44" rx="10" fill="#e9f1fd"/>
+<rect x="768" y="130" width="204" height="10" fill="#e9f1fd"/>
+<rect x="768" y="96" width="204" height="204" rx="10" fill="none" stroke="#2f6fd6" stroke-width="1.5"/>
+<text x="784" y="118" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="18" font-weight="900" fill="#2f6fd6" text-anchor="start" dominant-baseline="middle" >45–64 歲</text>
+<text x="784" y="158" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >前三大死因（人）</text>
+<circle cx="794" cy="192" r="11" fill="#2f6fd6"/>
+<text x="794" y="193" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >1</text>
+<text x="812" y="192" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >癌症</text>
+<text x="958" y="192" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >15,418</text>
+<circle cx="794" cy="226" r="11" fill="#2f6fd6"/>
+<text x="794" y="227" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >2</text>
+<text x="812" y="226" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >心臟疾病</text>
+<text x="958" y="226" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >4,552</text>
+<circle cx="794" cy="260" r="11" fill="#2f6fd6"/>
+<text x="794" y="261" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >3</text>
+<text x="812" y="260" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >腦血管疾病</text>
+<text x="958" y="260" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >2,243</text>
+<rect x="768" y="420" width="204" height="204" rx="10" fill="#e9f1fd" stroke="#2f6fd6" stroke-width="1.5"/>
+<text x="784" y="446" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="700" fill="#2f6fd6" text-anchor="start" dominant-baseline="middle" >可以做的健康行為</text>
+<path d="M786,486 l5,5 l9,-10" fill="none" stroke="#2f6fd6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="808" y="486" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >參加癌症篩檢</text>
+<path d="M786,526 l5,5 l9,-10" fill="none" stroke="#2f6fd6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="808" y="526" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >控制血壓血糖血脂</text>
+<path d="M786,566 l5,5 l9,-10" fill="none" stroke="#2f6fd6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="808" y="566" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >戒菸、少喝酒</text>
+<rect x="988" y="96" width="204" height="204" rx="10" fill="#ffffff" stroke="#1c8f69" stroke-width="1.5"/>
+<rect x="988" y="96" width="204" height="44" rx="10" fill="#e5f5ef"/>
+<rect x="988" y="130" width="204" height="10" fill="#e5f5ef"/>
+<rect x="988" y="96" width="204" height="204" rx="10" fill="none" stroke="#1c8f69" stroke-width="1.5"/>
+<text x="1004" y="118" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="18" font-weight="900" fill="#1c8f69" text-anchor="start" dominant-baseline="middle" >65 歲以上</text>
+<text x="1004" y="158" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >前三大死因（人）</text>
+<circle cx="1014" cy="192" r="11" fill="#1c8f69"/>
+<text x="1014" y="193" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >1</text>
+<text x="1032" y="192" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >癌症</text>
+<text x="1178" y="192" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >37,918</text>
+<circle cx="1014" cy="226" r="11" fill="#1c8f69"/>
+<text x="1014" y="227" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >2</text>
+<text x="1032" y="226" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >心臟疾病</text>
+<text x="1178" y="226" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >17,532</text>
+<circle cx="1014" cy="260" r="11" fill="#1c8f69"/>
+<text x="1014" y="261" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" >3</text>
+<text x="1032" y="260" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="16" font-weight="700" fill="#26304a" text-anchor="start" dominant-baseline="middle" >肺炎</text>
+<text x="1178" y="260" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="14" font-weight="500" fill="#56627f" text-anchor="end" dominant-baseline="middle" >16,001</text>
+<rect x="988" y="420" width="204" height="204" rx="10" fill="#e5f5ef" stroke="#1c8f69" stroke-width="1.5"/>
+<text x="1004" y="446" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="700" fill="#1c8f69" text-anchor="start" dominant-baseline="middle" >可以做的健康行為</text>
+<path d="M1006,486 l5,5 l9,-10" fill="none" stroke="#1c8f69" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1028" y="486" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >接種流感與肺炎疫苗</text>
+<path d="M1006,526 l5,5 l9,-10" fill="none" stroke="#1c8f69" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1028" y="526" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >預防跌倒</text>
+<path d="M1006,566 l5,5 l9,-10" fill="none" stroke="#1c8f69" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1028" y="566" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="15" font-weight="500" fill="#26304a" text-anchor="start" dominant-baseline="middle" >慢性病規律就醫</text>
+<line x1="40" y1="652" x2="1240" y2="652" stroke="#dde2ec" stroke-width="1"/>
+<text x="40" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="500" fill="#56627f" text-anchor="start" dominant-baseline="middle" >中間色帶依真實年齡比例繪製；上方為 114 年各年齡層前三大死因與死亡人數，下方為對應的健康行為（教學建議）</text><text x="1240" y="684" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif" font-size="13" font-weight="400" fill="#7a849c" text-anchor="end" dominant-baseline="middle" >未滿 1 歲嬰兒另行統計，未列入</text>
+</svg></div>
+  </figure>
+  <div class="meta">
+    <div class="m"><span class="k">對應課本</span><span>1-1〈健康 ALL PASS〉、1-4〈我們與慢性病的距離〉、1-5〈健康「老」快活〉</span></div>
+    <div class="m"><span class="k">教學目標</span><span>學生能說出不同年齡層的主要健康威脅，並為自己現在的年齡訂出一個行動。</span></div>
+  </div>
+  <h3>圖上的數據（114 年，合計，死亡人數）</h3>
+  <div class="tw"><table class=""><thead><tr><th>年齡層</th><th>第 1 名</th><th>第 2 名</th><th>第 3 名</th></tr></thead><tbody><tr><td>1–14 歲</td><td>癌症 63</td><td>事故傷害 51</td><td>先天性畸形 27</td></tr><tr><td>15–24 歲</td><td>事故傷害 329</td><td>自殺 236</td><td>癌症 74</td></tr><tr><td>25–44 歲</td><td>癌症 1,362</td><td>自殺 1,177</td><td>事故傷害 882</td></tr><tr><td>45–64 歲</td><td>癌症 15,418</td><td>心臟疾病 4,552</td><td>腦血管疾病 2,243</td></tr><tr><td>65 歲以上</td><td>癌症 37,918</td><td>心臟疾病 17,532</td><td>肺炎 16,001</td></tr></tbody></table></div>
+  <div class="h3row"><h3>提問引導</h3><button type="button" class="btn ghost revealall" data-scope="fig4">全部顯示答案</button></div>
+  <ol class="qa"><li><p class="q">哪個死因從 25 歲開始一直是第 1 名？</p><details id="fig4-a1"><summary>看參考答案</summary><p>癌症。</p></details></li><li><p class="q">自殺出現在哪些年齡層的前三名？</p><details id="fig4-a2"><summary>看參考答案</summary><p>15–24 歲與 25–44 歲，都是第 2 名。</p></details></li><li><p class="q">你家人現在在哪一格？你可以提醒他們什麼？</p><details id="fig4-a3"><summary>看參考答案</summary><p>開放作答，可連結 1-4 家庭樹活動。</p></details></li><li><p class="q">寫下「這週我會做的一件事」。</p><details id="fig4-a4"><summary>看參考答案</summary><p>開放作答。</p></details></li></ol>
+  <h3>學生活動</h3>
+  <p class="act">「給 40 年後的自己」：每人寫一張小卡，寫下現在要開始的一個健康行為與一個安全行為。</p>
+  <h3>課綱對應</h3>
+  <div class="tw"><table class="kg"><thead><tr><th>代碼</th><th>內容</th><th>如何呼應</th></tr></thead><tbody><tr><td>1b-V-4</td><td>建構健康自主管理的策略或行動</td><td>為自己的年齡層訂出行動</td></tr><tr><td>2b-V-1</td><td>樂於終身遵守健康的生活規範與價值觀</td><td>理解健康行為要終身持續</td></tr><tr><td>4a-V-3</td><td>有效地表現促進健康及減少健康風險的行為</td><td>「給 40 年後的自己」行動承諾</td></tr><tr><td>Aa-V-3</td><td>健康老化，高齡、長期照護與安寧照護</td><td>連結 65 歲以上的健康老化（課本 1-5）</td></tr><tr><td>Fb-V-1</td><td>健康生活型態的改善與執行策略</td><td>各年齡層的健康行為建議</td></tr><tr><td>健體-U-A3</td><td>具備規劃、實踐與檢討反省的素養</td><td>規劃並實踐個人健康行動</td></tr></tbody></table></div>
+  <h3>教學提醒</h3>
+  <ul class="tips"><li>未滿 1 歲嬰兒另行統計，圖上未列入；中間色帶依真實年齡比例繪製。</li></ul>
+  <nav class="pager"><a href='#fig3'>← 圖3</a><a href='#flow'>課堂流程 →</a></nav>
+</section>
+
+<section class="view" id="flow" data-view="flow" hidden>
+  <p class="eyebrow">課堂流程</p>
+  <h2>2 節課怎麼上</h2>
+  <p class="lead">第一節看見差異、分析原因；第二節判斷可預防的部分、訂出行動。上課時可以邊做邊勾選。</p>
+  <div class="progress"><div class="bar" aria-hidden="true"><i id="barfill"></i></div><span id="progtext">已完成 0 / 6 步</span><button type="button" class="btn ghost" id="resetsteps">全部取消勾選</button></div>
+  <ol class="steps"><li class="step"><label><input type="checkbox" id="step0" class="stepbox"><span class="when">第一節・10 分</span><span class="what">猜猜看：少年前三大死因</span><span class="use">課本 1-4 p.51、圖1</span><span class="out">產出：各組的猜測</span></label></li><li class="step"><label><input type="checkbox" id="step1" class="stepbox"><span class="when">第一節・15 分</span><span class="what">開網站「兩張排行榜」，切換男女</span><span class="use">互動網站</span><span class="out">產出：一個意外的發現</span></label></li><li class="step"><label><input type="checkbox" id="step2" class="stepbox"><span class="when">第一節・25 分</span><span class="what">魚骨圖分組分析</span><span class="use">課本 2-1 p.85–87、圖2、空白魚骨圖</span><span class="out">產出：各組魚骨圖</span></label></li><li class="step"><label><input type="checkbox" id="step3" class="stepbox"><span class="when">第二節・15 分</span><span class="what">死因小卡放進四象限</span><span class="use">圖3、死因小卡</span><span class="out">產出：各組四象限與理由</span></label></li><li class="step"><label><input type="checkbox" id="step4" class="stepbox"><span class="when">第二節・15 分</span><span class="what">網站「地區差異」：找自己的縣市</span><span class="use">互動網站</span><span class="out">產出：一句話描述自己縣市的位置</span></label></li><li class="step"><label><input type="checkbox" id="step5" class="stepbox"><span class="when">第二節・20 分</span><span class="what">生命週期與行動承諾</span><span class="use">圖4、小卡</span><span class="out">產出：「給 40 年後的自己」</span></label></li></ol>
+  <p class="note"><b>只有 1 節課時：</b>圖1（10 分）→ 圖2（20 分）→ 圖4 行動承諾（20 分）。</p>
+  <h3>搭配互動網站「十大死因 10 年追蹤」</h3>
+  <div class="tw"><table class=""><thead><tr><th>網站區塊</th><th>搭配</th><th>學生可以做的事</th></tr></thead><tbody><tr><td>兩張排行榜</td><td>圖1</td><td>切換年份與男女，比較全國與少年</td></tr><tr><td>10 年名次變化</td><td>圖1、圖3</td><td>看自殺在 113 年重回全國前十</td></tr><tr><td>男女差異</td><td>圖2</td><td>看事故傷害男性是女性的幾倍</td></tr><tr><td>少年三大死因</td><td>圖2</td><td>切到「死亡率」，排除少子化影響</td></tr><tr><td>地區差異</td><td>圖2 環境因素</td><td>選自己的縣市與死因，看排名</td></tr></tbody></table></div>
+  <aside class="help" id="help-flow"><b>心情不好、壓力很大的時候，你不用一個人撐著</b><p>可以找學校輔導室、導師或信任的大人聊聊。安心專線 <span class="num">1925</span>（依舊愛我），24 小時免付費。擔心身邊的同學時，陪著他、一起找大人幫忙。</p></aside>
+</section>
+
+<section class="view" id="notes" data-view="notes" hidden>
+  <p class="eyebrow">出處與提醒</p>
+  <h2>數據出處與教學提醒</h2>
+  <h3>數據出處</h3>
+  <ul class="plain">
+    <li>衛生福利部統計處「114 年死因統計結果摘要表」：表 1（主要死亡原因）、表 3–表 7（各年齡層）、表 12（12–17 歲少年）、表 14–21（縣市別）。<a class="ext" href="https://dep.mohw.gov.tw/DOS/lp-5069-113.html" target="_blank" rel="noopener">統計處歷年統計</a></li>
+    <li>《十二年國民基本教育課程綱要 健康與體育領域》（民國 107 年 5 月），健康與護理學習重點與核心素養。</li>
+    <li>育達乙版《健康與護理》第一冊。</li>
+  </ul>
+  <h3>教學提醒</h3>
+  <div class="tw"><table class=""><thead><tr><th>提醒</th><th>說明</th></tr></thead><tbody><tr><td>課本與網站年份不同</td><td>課本用 2023 年公布的數字，本資料用 114 年；可讓學生比較變化</td></tr><tr><td>小樣本</td><td>12–17 歲一年約 240–330 人死亡，很多死因不到 20 人，要看多年趨勢</td></tr><tr><td>少子化</td><td>10 年來 12–17 歲人口少了 23.1%，比較年份時看「死亡率」而不是「人數」</td></tr><tr><td>相關不等於因果</td><td>魚骨圖與四象限是教學整理，統計只顯示死因，不顯示原因</td></tr><tr><td>敏感議題</td><td>討論自殺只談原因與支持，不討論方式；事前與輔導室追蹤有風險的學生</td></tr><tr><td>課綱版本</td><td>本頁依技術型高級中等學校版領綱標注；用於普通型高中時，請對照普通型領綱確認代碼</td></tr></tbody></table></div>
+  <aside class="help" id="help-notes"><b>心情不好、壓力很大的時候，你不用一個人撐著</b><p>可以找學校輔導室、導師或信任的大人聊聊。安心專線 <span class="num">1925</span>（依舊愛我），24 小時免付費。擔心身邊的同學時，陪著他、一起找大人幫忙。</p></aside>
+</section>
+
+</div></main>
+
+<script>
+(function () {
+  var views = Array.prototype.slice.call(document.querySelectorAll('.view'));
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tabs a'));
+  function show() {
+    var id = (location.hash || '#guide').slice(1);
+    if (!views.some(function (v) { return v.id === id; })) id = 'guide';
+    views.forEach(function (v) { v.hidden = v.id !== id; });
+    tabs.forEach(function (a) { if (a.getAttribute('data-c') === id) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+    var cur = document.querySelector('.tabs a[aria-current]');
+    if (cur && cur.scrollIntoView) try { cur.scrollIntoView({ block: 'nearest', inline: 'nearest' }); } catch (e) {}
+  }
+  window.addEventListener('hashchange', function () { show(); window.scrollTo(0, 0); });
+  show();
+  setTimeout(function () { window.scrollTo(0, 0); }, 0);
+
+  document.querySelectorAll('.revealall').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var ds = document.querySelectorAll('#' + b.getAttribute('data-scope') + ' details');
+      var open = Array.prototype.some.call(ds, function (d) { return !d.open; });
+      ds.forEach(function (d) { d.open = open; });
+      b.textContent = open ? '全部收起答案' : '全部顯示答案';
+    });
+  });
+
+  document.querySelectorAll('.zoom').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var w = document.getElementById(b.getAttribute('data-target'));
+      var on = !w.classList.contains('big');
+      w.classList.toggle('big', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.textContent = on ? '縮回原尺寸' : '放大圖片';
+    });
+  });
+
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.stepbox'));
+  function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function prog() {
+    var n = boxes.filter(function (x) { return x.checked; }).length;
+    document.getElementById('barfill').style.width = (n / boxes.length * 100) + '%';
+    document.getElementById('progtext').textContent = '已完成 ' + n + ' / ' + boxes.length + ' 步';
+    store('flow-steps', boxes.map(function (x) { return x.checked ? 1 : 0; }).join(''));
+  }
+  var saved = load('flow-steps');
+  if (saved && saved.length === boxes.length) boxes.forEach(function (x, i) { x.checked = saved.charAt(i) === '1'; });
+  boxes.forEach(function (x) { x.addEventListener('change', prog); });
+  document.getElementById('resetsteps').addEventListener('click', function () { boxes.forEach(function (x) { x.checked = false; }); prog(); });
+  prog();
+})();
+</script>
+
+</body></html>
