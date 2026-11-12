@@ -25,7 +25,7 @@ h1 { font-size: clamp(26px, 3.4vw, 38px); font-weight: 900; line-height: 1.25; m
 .tabs .wrap { display: flex; gap: 4px; overflow-x: auto; padding-block: 8px; scrollbar-width: thin; }
 .tabs a { flex: none; text-decoration: none; color: var(--muted); font-weight: 700; font-size: 14px; padding: 7px 14px; border-radius: 999px; border: 1.5px solid transparent; }
 .tabs a:hover { color: var(--ink); background: var(--ground); }
-.tabs .out { margin-left: auto; display: flex; gap: 4px; padding-left: 12px; border-left: 1px solid var(--rule); }
+.tabs .out { flex: none; display: flex; gap: 4px; padding-right: 8px; margin-right: 4px; border-right: 1px solid var(--rule); }
 .tabs .out a { color: var(--blue); }
 .tabs a[aria-current="page"] { color: #fff; background: var(--ink); }
 .tabs a[data-c="fig1"][aria-current="page"] { background: var(--blue); }
@@ -108,6 +108,7 @@ a.ext { color: var(--blue); }
 </div></header>
 
 <nav class="tabs" aria-label="章節"><div class="wrap">
+  <span class="out"><a href="../">← 回首頁</a><a href="../dashboard/">學生互動圖表</a></span>
   <a href="#guide" data-c="guide">使用說明</a>
   <a href="#fig1" data-c="fig1">圖1 韋恩圖</a>
   <a href="#fig2" data-c="fig2">圖2 魚骨圖</a>
@@ -115,7 +116,6 @@ a.ext { color: var(--blue); }
   <a href="#fig4" data-c="fig4">圖4 時間軸</a>
   <a href="#flow" data-c="flow">課堂流程</a>
   <a href="#notes" data-c="notes">出處與提醒</a>
-  <span class="out"><a href="../">← 回首頁</a><a href="../dashboard/">學生互動圖表</a></span>
 </div></nav>
 
 <main><div class="wrap">
